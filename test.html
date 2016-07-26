@@ -1,31 +1,42 @@
+<html>
+<head>
+</head>
+ 
+ 
+<body>
+<div class="articles">
+<div class="articlelist">
+    <ul>
+        <li style="display:block;" onclick="toggleArticles('article1')">ARTICLE 1</li>
+        <li style="display:block;" onclick="toggleArticles('article2')">ARTICLE 2</li>
+        <li style="display:block;" onclick="toggleArticles('article3')">ARTICLE 3</li>
+        <li style="display:block;" onclick="toggleArticles('article4')">ARTICLE 4</li>
+    </ul>
+</div>
+<div class="fullarticle" id="article1">
+    <h1>ARTICLE 1</h1>
+    <p>ABCDEFGH</p>
+</div>
+<div class="fullarticle" id="article2">
+    <h1>ARTICLE 2</h1>
+    <p>ABCDEFGH</p>
+</div>
+<div class="fullarticle" id="article3">
+    <h1>ARTICLE 3</h1>
+    <p>ABCDEFGH</p>
+</div>
+<div class="fullarticle" id="article4">
+    <h1>ARTICLE 4</h1>
+    <p>ABCDEFGH</p>
+</div>
+</div>
 
-<HTML>
-
-<HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<TITLE>Amy Pang's homepage</TITLE>
-
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-
-<style type="text/css">
-a:link 	  {text-decoration: none; color: #008282;}
-a:visited {text-decoration: none; color: #008282;}
-a:hover   {text-decoration: none; color: #81D9D9;}
-a:link.navigation { font-family: 'Tangerine', serif; font-size: 70px; font-weight:normal; color: #FFFFFF;}
-a:visited.navigation { font-family: 'Tangerine', serif; font-size: 70px; font-weight:normal; color: #FFFFFF;}
-a:hover.navigation   {text-decoration: none; color: #81D9D9;}
-p.navigation  { font-family: 'Tangerine', serif; font-size: 70px; font-weight:normal;text-decoration: none; color: #81D9D9; margin:0;}
-p.head1 {  font-family: 'Tangerine', serif; font-size: 70px; font-weight:normal;text-decoration: none; color: #FFFFFF;}
-p.head2 { font-family: 'Tangerine', serif; font-size: 70px; font-weight:normal;text-decoration: none; color: #008282;}
-  </style>
-</HEAD>
-
-
-<BODY>
-<center>
-<table width=100% height=100%>
-<tr>
-
-<td bgcolor=#008282 valign=bottom>
-<p class="head1">amypang@hkbu.edu.hk
-</td>
+<script>
+function toggleArticles(articleID) {
+    $('#articles .fullArticle').hide(); // this hides all currently open articles (if any);
+    $('#articles #' + articleID).show(); // show article
+}
+$('#articles .fullArticle').hide();
+</script>
+</body>
+</html>
