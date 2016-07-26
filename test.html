@@ -25,34 +25,19 @@
 <div class="articlelist">
     <ul>
         <li style="display:block;" onclick="toggleArticles('article1')">ARTICLE 1</li>
-        <li style="display:block;" onclick="toggleArticles('article2')">ARTICLE 2</li>
-        <li style="display:block;" onclick="toggleArticles('article3')">ARTICLE 3</li>
-        <li style="display:block;" onclick="toggleArticles('article4')">ARTICLE 4</li>
+
     </ul>
 </div>
-<div class="fullarticle" id="article1">
-    <h1>ARTICLE 1</h1>
+<div class="fullarticle" id="article">
+    <h1>ARTICLE</h1>
     <p>ABCDEFGH</p>
 </div>
-<div class="fullarticle" id="article2">
-    <h1>ARTICLE 2</h1>
-    <p>ABCDEFGH</p>
-</div>
-<div class="fullarticle" id="article3">
-    <h1>ARTICLE 3</h1>
-    <p>ABCDEFGH</p>
-</div>
-<div class="fullarticle" id="article4">
-    <h1>ARTICLE 4</h1>
-    <p>ABCDEFGH</p>
-</div>
+
 </div>
 
 <script  type='text/javascript' >
 $('.articlelist ul li').click(function() {
-    var i = $(this).index();
-    $('.fullarticle').hide();
-    $('#article' + (i+1)).show();
+    $('.fullarticle').toggle();
 });
 </script>
 </body>
