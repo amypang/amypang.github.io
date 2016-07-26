@@ -48,12 +48,12 @@
 </div>
 </div>
 
-<script>
-function toggleArticles(articleID) {
-    $('#articles .fullArticle').hide(); // this hides all currently open articles (if any);
-    $('#articles #' + articleID).show(); // show article
-}
-$('#articles .fullArticle').hide();
+<script  type='text/javascript' >
+$('.articlelist ul li').click(function() {
+    var i = $(this).index();
+    $('.fullarticle').hide();
+    $('#article' + (i+1)).show();
+});
 </script>
 </body>
 </html>
