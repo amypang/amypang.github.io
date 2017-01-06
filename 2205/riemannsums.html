@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Approximating numerical integrals</title>
+<style type="text/css">
+body {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    background-color: #F4F4F4;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #000;
+}
+</style>
+</head>
+<body>
+
+<!-- Sage Free Trial  -->
+<script type="text/javascript" src="http://aleph.sagemath.org/static/jquery.min.js"></script>
+<script type="text/javascript" src="http://aleph.sagemath.org/embedded_sagecell.js"></script>
+<script>
+$(function() {
+var makecells = function() {
+singlecell.makeSagecell({
+inputLocation: '#first_cell',
+editor: 'codemirror',
+replaceOutput: true,
+hide: ['editorToggle', 'sageMode', 'computationID', 'messages', 'sessionTitle', 'done', 'sessionFilesTitle', 'sessionFiles',  'files', 'sageMode'],
+evalButtonText: 'Calculer'
+});
+}
+sagecell.init(makecells);
+})
+</script>
+
+<div>
+
+<h1 style="text-align: center;">Approximating Integrals</h1>
+
+<p>
+The following allows you to interactively explore various rules for
+approximating integrals. You can change the function, the interval, the number
+of subintervals in the partition and the approximation rule to use.
+</p>
+
+<!-- First cell -->
+<div id="first_cell">
+<script type="text/code">
+%load http://lacim.uqam.ca/~saliola/sage/sage-cell/illustrate_numerical_integration.sage
+
+@interact
+def interact_function(  function = input_box(default = x*sin(x^2)+5, type = SR, label="f(x)"),
+        interval=range_slider(-5, 5, 1, default=(3, 4), label="Interval"),
+        n = slider(1, 30, 1, default=2, label="Number of subintervals"),
+        rule = selector(['none', 'left', 'right', 'midpoint',
+        'maximum (upper)', 'minimum (lower)', 'trapezoid', 'Simpson'],
+        nrows=1, label="Approximation rule", default="none"),
+        show_formula = checkbox(default=False, label="Show Formula"),
+        ):
+    return illustrate_numerical_integration(function, interval, n, rule, show_formula, aspect_ratio=.10)
+</script>
+</div>
+</div>
+
+</body>
+</html>
