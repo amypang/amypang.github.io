@@ -1,0 +1,227 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Math 2207 Linear Algebra, Semester 2 2018, HKBU</title>
+ 
+<link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css">
+ 
+ 
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic' rel='stylesheet' type='text/css'>
+ 
+ 
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js'></script>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#tabs').tabs();
+  });
+</script>
+ 
+<style type="text/css">
+ 
+html {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+ 
+h1 { font-family: 'Tangerine', serif; font-size: 60px; font-weight:normal; color: #00529c; text-shadow: 4px 4px 4px #aaa; margin-left: 25%;}
+h4 { font-family: 'Canterell'; font-size: 20px;  font-style: italic; font-weight:normal; color: #5c305c; margin-left: 25%; margin-top: -60px; padding-left: 300px}
+ 
+body { font-family: 'Canterell'; font-size: 14px;}
+a  {text-decoration:none; border-bottom:1px dotted #5c305c; color: #00529c;}
+a:hover  {text-decoration:none; border-bottom:none; color: #00529c;}
+th {background-color: white; color:#00529c; padding: 8px; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd;}
+tr:hover{background-color:#f5f5f5}
+td {padding: 8px; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd;}
+.ui-widget-header {border: 1px solid #aaaaaa; background: #00529c; color: #222222; font-weight: bold;}
+.ui-widget-content h2 {font-family: 'Canterell'; font-style: italic; font-weight:normal; color: #00529c; margin-right: 70pt; font-size: 16px; font-family:}
+.ui-widget-content a  {text-decoration:none; border-bottom:1px dotted #00529c; color: #00529c;}
+.ui-widget-content a:hover  {text-decoration:none; border-bottom:none; color: #00529c;}
+.ui-widget-content h3 {font-family: 'Canterell'; font-style: italic; color: #00529c; margin-right: 70pt; font-size: 16px; font-family:}
+.ui-widget-content p {margin-left: 70pt; font-style: none; }
+ 
+</style>
+</head>
+ 
+ 
+<body>
+ 
+<div class="ui-widget">
+<!--
+<h1><span style="color: #5c305c;">Math 3407</span> Advanced Linear Algebra</h1>
+<h4>Semester 2, 2019</h4>
+-->
+ 
+ <!--
+<a href="3407.pdf">Official course syllabus</a><br>
+<a href="Math3407Spring2019info.pdf">General information</a> <br><br>
+
+<ul>
+ <li>Class:  Monday 15:30-17:20 @AAB706; Tuesday 9:30-11:20 @AAB707.</li>
+  <li>Office hours (with the instructor @FSC1209): 
+  <ul>
+  <li>Monday 18:00-19:00 (you can also ask questions directly after class)</li>
+ </ul>
+ -->
+ 
+<li>Instructor: <a href=http://amypang.github.io>Dr. Amy Pang</a>, <script language="javascript">--> <!--
+var p3 = '<a hr';
+var p4 = 'ef="ma';
+var p5 = 'ilto:amy';
+var p6 = 'pang@';
+var p7 = 'hkb';
+var p8 = 'u.edu.hk">';
+var p9 = 'amyp'; 
+var p10 = 'ang@h';
+var p11 = 'kbu.edu.hk</';
+var p12 = 'a>*';
+document.write(p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12);
+// -->
+<!--</script> <noscript>
+[View Source or enable Javascript to see email address] 
+</noscript></li>
+
+<!-- 
+  <li>Teaching assistant:  HOU Liangshao 侯良哨 <script language="javascript">--> <!--
+var p3 = '<a hr';
+var p4 = 'ef="ma';
+var p5 = 'ilto:';
+var p6 = '16484';
+var p7 = '096@life.hkb';
+var p8 = 'u.edu.hk">';
+var p9 = '1648';
+var p10 = '4096@life.h';
+var p11 = 'kbu.edu.hk</';
+var p12 = 'a>';
+document.write(p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12);
+// -->
+<!--</script> <noscript>
+[View Source or enable Javascript to see email address] 
+</noscript>
+
+ 
+ </ul>
+<!--* Please put "Math 3407" in the subject, and allow 24 hours for a response. To include equations etc., attach a .pdf or .jpeg (e.g screenshot or photo); no MS Word documents or raw latex files please. -->
+ <br><br>
+ 
+
+<div id="tabs">
+  <ul>
+    <li><a href="#home">Annoucements</a></li>
+    <li><a href="#schedule">Schedule, Board pictures</a></li>
+    <li><a href="#hwk">Homework</a></li>
+    <li><a href="#exams">Exams</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+ 
+  <div id="home">
+  
+   9 March 2018: This webpage is under construction. Everything currently here is subject to change before the start of the semester.
+
+  <!-- 31 January: Your homework 1 has been graded and is available for collection anytime from the box outside Dr. Pang's office.<br><br>
+ 15 January: Please <a href=https://hkbuhk.qualtrics.com/jfe/form/SV_dbbWZQGuHcyhKS1>choose office hour times</a>. 
+ -->
+
+</div>
+ 
+  <div id="schedule">
+   
+ 
+<ul>
+ <li>This schedule is tentative and subject to change throughout the semester.</li>
+ <li><!--The stars indicate the rough difficulty of the topic.--> The numbers indicate the relevant sections of the textbook.</li>
+ <li>You are strongly recommended to quickly read the textbook sections before class.</li>
+ <li>Pictures of the board will be uploaded here after each class.</li>
+</ul> 
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRDhpN6ITwj6SvU8SnyWnvhOlZUW6bCwjewQJrpo7a0LKkr3JRJeCJ0CVBpCe3OEWoAqDIa9T8c95pn/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style='height: 440px; width: 90%'></iframe>
+ </div>
+ 
+
+<div id="hwk">
+  <ul>
+  <li>The dates in gray below are tentative and subject to change. It is the student's responsibility to check this page for new homework postings.</li>
+  <li>Homework is due in class, 15 minutes after the start of class, on the due date. Please place your work on the piles near the entrances of the classroom. <b>No homework will be accepted after the due time, and no extensions will be granted under any circumstances.</b></li>
+  <!-- <li>Each homework will generally cover material from lectures up to 6 days before the due date.</li> -->
+  <li>You are encouraged to work with your classmates, but you must write up your solution by yourself - this is to ensure that you understand the solution, and can solve similar problems on the exams.</li>
+  <!--<li>There are no marks for optional problems. <!--, and the material is not in the syllabus. They are for students who want to learn something extra.--></li>
+  <li>Please staple all sheets of your homework together, and put your name and student ID clearly on the front page.</li>
+  <li>You are strongly encouraged to make a copy of your homework (e.g. take a picture with your phone) before handing it in, so you can compare your work to the official solutions as soon as possible after the deadline.</li>
+ <!--<li>You can collect your graded homeworks and in-class exercises anytime from the box outside Dr. Pang's office. </li> -->
+  </ul>
+  <br>
+  <!--
+<table style="width:80%">
+  <tr>
+    <th></th>
+    <th>Release Date</th> 
+    <th>Due Date</th>
+  </tr>
+  <tr>
+   <td><a href=hwk1.pdf>Homework 1</a></td>
+  <td>17 January</td>
+  <td>29 January</td>
+  </tr>
+  <tr>
+   <td>Homework 2</td>
+  <td><span style="color: grey;">30 January</span></td>
+  <td><span style="color: grey;">12 February</span></td>
+  </tr>
+  <tr>
+  <td>>Homework 3</a></td>
+  <td><span style="color: grey;">14 February</span></td>
+  <td><span style="color: grey;">5 March</span></td>
+  </tr>
+  <tr>
+  <td>Homework 4</td>
+  <td><span style="color: grey;">7 March</span></td>
+  <td><span style="color: grey;">19 March</span></td>
+  </tr>
+  <tr>
+  <td>Homework 5</td>
+  <td><span style="color: grey;">24 March</span></td>
+  <td><span style="color: grey;">9 or 16 April</span></td>
+  </tr>
+  <tr>
+  <td>Homework 6</td>
+  <td><span style="color: grey;">11 April</span></td>
+  <td><span style="color: grey;">24 April</span> <!-- <span style="color: red;">30 April, to Dr. Pang's mailbox on 12F FSC</span> --></td> 
+  </tr>
+</table>
+-->
+</div>
+ 
+ 
+  <div id="exams">
+ <!--   Midterm: 1 hour, at the start of class: 15:30 Monday 12 March @AAB706.<br>
+    Final: 2 hours, sometime between 4 - 16 May.<br><br> -->
+    
+     <!--<a href=examinfo.pdf>Some information about question style</a>.<br><br>-->
+  <!--  The midterm will cover everything up to and including the middle of the class of XXXXX .This includes Sections XXXX <br><br> -->
+   
+   <ul>
+   <li>No notes are allowed in any of the exams. No theorems will be given to you.</li>
+  <li>The questions on the  midterm and final will require you to show all your work, and there will be partial credit available.</li>
+  <li>All homework questions are fair game for the quizzes, midterm and final. However, there will also be questions unlike those on the homework, which will require you to think on your feet. All questions will be solvable using material from class and from homework. <!--You will never be asked to solve the questions using a particular method. You may use any mathematically-valid method in your solution (including material from outside the class, as long as you explain it fully).--></li>
+<!--
+<li>In the final exam you will write in an answer book and not on the question paper.</li>
+  <li>You will not be asked to repeat any proof from class in the exams, but the ideas of the proofs may help you to solve problems.</li>
+ -->
+ </ul>
+
+</div>
+
+ 
+  <div id="resources">
+<h3>General study advice</h3> 
+<a href="http://www.uvm.edu/~cvincen1/files/teaching/StudySkills.pdf">Essential study tips from Dr Vincent, University of Wisconsin</a>. It's a long document, but full of really good advice. Sections 1, 2 and 5 are particularly relevant. Note that much of the logistical details in the last section are specific to the University of Wisconsin and do NOT apply to this class (e.g. we do NOT give incompletes).<br><br>
+<a href="https://www.quora.com/I-am-finding-my-Mathematics-course-difficult-what-should-I-do/answer/Anthony-Bosman?share=3f0750f8">Advice for struggling students from Dr Bosman, University of Rice</a>.<br><br>
+<!-- Any sort of helpdesk that the dept / students union offer -->
+<h3>Specific topics</h3>
+ 
+</div>
+</div>
+ 
+Page template from <a href=http://wronkyn.ca/~jlee/math19/>Jon Lee</a>. Please do not copy without permission.
